@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>路由的使用</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/vue2.js"></script>
+	<script type="text/javascript" src="./js/vue-router2.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<router-link to="/login">登录</router-link>
+		<router-link to="/register/bingbing">注册</router-link>
+		<!-- 占位符 -->
+		<router-view></router-view>
+	</div>
+
+	<script type="text/javascript">
+		// 定义根组件
+		var App = Vue.extend();
+		// 定义注册组件
+		var register = Vue.extend({
+			template:'<h1>注册:{{oname}}</h1>',
+			// 新增
+			data(){
+				return{
+					oname:''
+				}
+			},
+			// 路由传值通过 created() 
+			created(){
+				this.oname = this.$route.params.uname
+			}
+		})
+		// 定义登录组件
+		var login = Vue.extend({
+			template:'<h1>登录</h1>'
+		})
+		// 定义路由并注册路由规则
+		var vueRouter = new VueRouter({
+			routes:[
+				{
+					path:'/',
+					redirect:'/login'
+				},
+				{
+					path:'/login',
+					component:login
+				},
+				{
+					// 新增 :uname
+					path:'/register/:uname',
+					component:register
+				}
+			]
+		})
+		// 使用路由
+		new Vue({
+			el:'#app',
+			router:vueRouter
+		})
+	
+	</script>
+
+</body>
+</html>
