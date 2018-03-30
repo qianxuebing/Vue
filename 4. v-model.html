@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>v-model</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<input type="text" placeholder="请输入" v-model="name">{{name}}		
+	</div>
+
+	<script type="text/javascript">
+		// 创建vue对象
+			new Vue({
+				// 边界管理
+				el:'#app',
+				// data 存放数据
+				data:{
+					name:''
+				}
+			})
+	</script>
+
+</body>
+</html>

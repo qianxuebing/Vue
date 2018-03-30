@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>插值表达式</title>
+	<meta charset="utf-8">
+	<!-- 引入vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<!-- 创建模板 -->
+		<div id="app">
+			{{name}}
+		</div>
+
+		<script type="text/javascript">
+			// 创建vue对象
+			new Vue({
+				// 边界管理
+				el:'#app',
+				// data 存放数据
+				data:{
+					name:'bingbing'
+				}
+			})
+		</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+:root{
+			--base-font-size: 50px;
+			--margin-top: 10px;
+			--padding: 10px;
+			--background-color: #eee;
+		}
+
+html{
+	width: 100%;
+	font-size: var(--base-font-size);
+	padding: var(--padding);
+}
+
+input{
+	width: 50%;
+	height: 60px;
+	line-height: 60px;
+	padding: var(--padding);
+	font-size: var(--font-size);
+	border: 1px solid #000;
+}
