@@ -2,22 +2,31 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>v-html</title>
+	<title>v-for</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/vue.js"></script>
 </head>
 <body>
+
 	<div id="app">
-		<h1 v-html="name"></h1>
+		<ul>
+			<li v-for="item in items">{{item.no}} {{item.name}}</li>
+		</ul>
 	</div>
 
 	<script type="text/javascript">
 		new Vue({
 			el:'#app',
 			data:{
-				name:'<h1>冰冰</h1>'
+				items:[
+					{no:01,name:'AAA'},
+					{no:02,name:'BBB'},
+					{no:03,name:'CCC'},
+					{no:04,name:'DDD'}
+				]
 			}
 		})
 	</script>
+
 </body>
 </html>
