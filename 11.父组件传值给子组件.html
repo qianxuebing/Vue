@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>父组件传值给子组件</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+
+	<template id="account">
+		<div>
+			<h1>组件:{{name1}}</h1>
+		</div>
+	</template>
+
+	<div id="app">
+		<account1 :name1="name"></account1>
+	</div>
+
+	<script type="text/javascript">
+
+		Vue.component('account1',{
+			template:'#account',
+			//接收数据
+			// 父组件通过 props 传值给子组件
+			props:{
+				name1:String
+			}
+		})
+
+		new Vue({
+			el:'#app',
+			data:{
+				name:'子组件'
+			}
+		})
+	</script>
+</body>
+</html>

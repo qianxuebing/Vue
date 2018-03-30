@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>组件的使用</title>
+	<title>组件的指令和事件绑定</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/vue.js"></script>
 </head>
@@ -11,9 +11,9 @@
 	<!-- 第一步：创建 template-->
 	<template id="account">
 		<div>
-			<h3>账号组件的内容:</h3>
-			<a href="">账号</a>
-			<a href="">密码</a>
+			<h3>账号组件的内容:{{message}}</h3>
+			<a href="#" @click="login">账号</a>
+			<a href="#">密码</a>
 		</div>		
 	</template>
 
@@ -23,9 +23,22 @@
 	</div>
 
 	<script type="text/javascript">
-		// 第二步：定义和注册组件
+		// 第二步：定义和注册组件,
 		Vue.component('account1',{
-			template:'#account'
+			template:'#account',
+			// 指令的使用
+			data(){
+				return{
+					message:'Hello word'
+				}
+			},
+			// 事件绑定
+			methods:{
+				login:function(){
+					alert("账号！")
+				}
+			}
+
 		})
 
 		new Vue({
