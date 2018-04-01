@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>rest用法</title>
+	</head>
+	<body>
+		
+		
+		<!--
+			rest 参数：
+				rest参数   ... 变量名
+				rest参数是一个数组，它的后面不能再有参数，不然会报错
+				扩展方法 ...
+					1.三个点后面是一个类数组，它的作用是把这个类数组转换为真正的数组，但是它需要放到一对中括号里
+					2.三个点后面是一个真正的数组，它的作用是把数组转换成一个普通集合数据，不需要加中括号
+					
+				
+		-->
+		
+		<script type="text/javascript">
+			
+			//rest用来替换arguments(参数)
+			
+			function sum(){
+				var sum = 0;
+				for (var i = 0; i < arguments.length; i ++) {
+					sum += arguments[i];
+				}
+				return sum;
+			}
+			
+			console.log(sum(1,2,3,4));
+			
+			//把集合转成数组
+			var str="abcd";
+			console.log(str);
+			console.log([...str]);
+			
+			//把数组转换成集合
+			
+			var num= [1,2,3,4];
+			console.log(num);
+			console.log(...num);
+			
+			
+		</script>
+		
+	</body>
+</html>

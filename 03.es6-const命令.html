@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>const命令</title>
+	</head>
+	<body>
+		
+		
+		
+		<!--
+			const 声明一个常量，一旦声明后不可更改
+				1.如果声明后修改就会报错
+				2.只声明不赋值也会报错
+				3.只能先声明后使用，不会被提前预解析
+				4.不能重复声明一个常量
+			注意：const声明的对象中属性是可以更改的
+		-->		
+		
+		<script type="text/javascript">
+			
+			const PI = 3.14;
+			//PI = 123; // 报错  Assignment to constant variable.
+			
+			const Person = {
+				name:'小明',
+				age:'12'
+			}
+			console.log(Person.name,Person.age);
+			
+//			const声明的对象中属性是可以更改的			
+			Person.name = '小红';
+			Person.age = 10
+			console.log(Person.name,Person.age);
+		</script>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组的解构赋值</title>
+	</head>
+	<body>
+		
+		
+		<!--
+			
+			解构赋值：
+				按照一定的模式，从数组或者对象中把数据拿出来，对变量进行赋值
+			
+			数组解构赋值：
+				等号左边与右边必须都是数组，数组的解构赋值要一一对应，如果对应不上的话就是undefined
+			
+		-->
+		
+		<script type="text/javascript">
+			 
+			 let [a,b,c] = [1,2,3]
+			 console.log(a,b,c); // 1 2 3
+			 		
+//			 数组的解构赋值要一一对应，如果对应不上的话就是undefined
+			 let [h,,j,k] = [4,5,6]
+			 console.log(h,j,k); // 4 6 undefined
+			
+//			可以用来获取函数的返回值
+			function fn(){
+				return ['red','blue','green'];
+			}
+			let [rr,gg,bb] = fn();
+			console.log(rr,gg,bb); // red blue green
+			
+		</script>
+		
+	</body>
+</html>

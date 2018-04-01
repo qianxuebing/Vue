@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>对象的解构赋值</title>
+	</head>
+	<body>
+		
+		<!--
+			对象解构赋值：
+				等号左边与右边必须是对象，名字要一一对应，顺序不需要对应，对应不上的值结果是undefined
+		-->
+				
+		<script type="text/javascript">
+			
+			var obj = {
+				id:'1',
+				name:'张三',
+				age:'30',
+				language:['html','css','js'],
+				study:function(){
+					console.log('学习方法');
+				}
+			}
+			let {id,name,age,language,study} = obj;
+			console.log(id,name,age,language,study);
+			
+			//注意：如果变量之前已经被声明了，再次赋值的时候不能加let
+			//并且整个赋值语句要用小括号包裹起来，以防止程序识别成作用域
+			({id,name,age,language,study} = obj);
+			
+		</script>
+		
+	</body>
+</html>

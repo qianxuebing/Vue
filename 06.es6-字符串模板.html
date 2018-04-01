@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串模板</title>
+	</head>
+	<body>
+		
+		
+		<!--
+			字符串模板：
+				1.字符串需要用一对反引号（Tab上面的按键）包裹起来，可以定义多行字符串，只用一对反引号
+				2.要拼进去的数据要放在${}中
+				3.大括号里面可以进行运算
+				4.大括号里面可以调用函数
+		-->
+			
+		<article id="article">
+			<h1></h1>
+			<p></p>
+		</article>
+		
+		<script type="text/javascript">
+			'use strict' // 严格模式
+			
+			let obj = {
+				title:'少女心酸日记',
+				content:'今天天气非常棒，好想出去逛逛，可是没有人陪！'
+			}
+			
+			//以前添加内容的方式，innerHTML 字符串拼接
+			let art = document.getElementById('article');
+//			art.innerHTML = '<h1>'+obj.title+'</h1><p>'+obj.content+'</p>';
+
+			// 字符串模板可以进行换行
+//			art.innerHTML = `<h1>${obj.title}</h1>
+//							 <p>${obj.content}</p>`
+//			
+			
+			function fn(){
+				return '少男';
+			}
+			
+			art.innerHTML = `<h1>${ fn() + obj.title }</h1><p> ${ obj.content } </p>`
+			
+		</script>
+		
+	</body>
+</html>
