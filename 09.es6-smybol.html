@@ -11,10 +11,26 @@
 				新增的第七种数据类型，表示独一无二，用来作为属性名，能保证不会与其他的属性名冲突
 					1.它是通过smybol函数生成的
 					2.它的前面不能用new，因为它生成的是一个原始类型的数据，不是对象
-					3.
-			
+					3.它可以接受一个参数，为了便于区别，即使长得一样它们也不相同
+					4.它不能与其他的值进行运算，没有隐式转换
+					5.它的值可以被转换成布尔值或字符串，不能转换成数字			
 		-->
 		
+		<script type="text/javascript">
+			var s = Symbol();
+			console.log(typeof s); //symbol
+			
+			var s1 = '123';
+			console.log(typeof s1); // string
+						
+//			3.它可以接受一个参数，为了便于区别，即使长得一样它们也不相同
+			let s2 = Symbol('a');
+			let s3 = Symbol('a');
+			console.log(s2,s3,s2==s3); // Symbol(a) Symbol(a) false
+			
+			
+			
+		</script>
 		
 		
 	</body>

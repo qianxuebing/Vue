@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>set</title>
+	</head>
+	<body>
+		
+		<!--
+			set数据结构：
+				set数据结构，类似数组，所有的数据都是唯一的，没有重复的值，它本身是一个结构函数
+				
+				size：数据的长度
+				add():添加一个数据
+				deleate():删除一个数据
+				has():查找某条数据，返回一个布尔值
+				clear():删除所有数据
+		-->
+		
+		<script type="text/javascript">
+			// 对象：{keyName:keyValue}
+			// 数组：[数据1，数据1，数据2，数据3]
+			
+			// set:[数据1，数据2，数据3]
+			
+			let set = new Set([1,1,2,3,4]);
+			// set数据
+			console.log(set); // 返回 1,2,3,4
+			// set 大小
+			console.log(set.size); // 4
+			// 添加
+			console.log(set.add('a')); // 1,2,3,4,a
+			// 删除
+			console.log(set.delete(1)); // true
+			console.log(set); // 2,3,4,a
+			// 查找数据
+			console.log(set.has('a')); // true
+			console.log(set.has('b')); // false
+			//删除数据
+			console.log(set.clear());
+			console.log(set);
+						
+		</script>
+	
+	</body>
+</html>
